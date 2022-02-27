@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Useful Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-teal-50 prose">
+    <nav
+      class="lg:sticky lg:top-0 lg:backdrop-blur-md md:bg-white/80 z-20 shadow-sm mb-3 px-36 flex justify-between items-center"
+    >
+      <div id="brand" class="text-black font-bold text-2xl tracking-tighter">
+        लोक सेवा
+        <span
+          class="text-teal-600 font-extrabold underline decoration-wavy decoration-2 underline-offset-4 uppercase"
+          >बिज्ञापन</span
+        >.
+      </div>
+      <ul class="lg:inline-flex text-black md:hidden sm:hidden hidden">
+        <li class="py-4 group hover:bg-teal-500 ease-in-out">
+          <a
+            class="group-hover:text-white group-hover:font-medium p-4"
+            href="#home"
+            >Home</a
+          >
+        </li>
+        <li class="py-4 group hover:bg-teal-500 ease-in-out">
+          <a
+            class="group-hover:text-white group-hover:font-medium p-4"
+            href="#about"
+            >About</a
+          >
+        </li>
+        <li
+          id="dropdown"
+          class="py-4 group hover:bg-teal-500 ease-in-out relative"
+        >
+          <a
+            class="group-hover:text-white group-hover:font-medium p-4"
+            href="#developer"
+            >Misc</a
+          >
+          <ul
+            id="dropdown-list"
+            class="flex duration-150 ease-in-out rounded-lg flex-col list-none shadow-md hidden bg-teal-500 absolute -bottom-40 p-0 w-56 min-h-max left-0"
+          >
+            <li
+              class="bg-white py-2 inline-flex items-center justify-start cursor-pointer px-4 hover:bg-teal-500 hover:text-white"
+            >
+              <a class="w-full" href="#developer">Contact</a>
+            </li>
+            <li
+              class="bg-white py-2 inline-flex items-center justify-start cursor-pointer px-4 hover:bg-teal-500 hover:text-white"
+            >
+              <a class="w-full" href="#feedback">Feedback</a>
+            </li>
+            <li
+              class="bg-white py-2 inline-flex items-center justify-start cursor-pointer px-4 hover:bg-teal-500 hover:text-white"
+            >
+              <a class="w-full" href="#developer">Terms of Use</a>
+            </li>
+            <li
+              class="bg-white py-2 inline-flex items-center justify-start cursor-pointer px-4 hover:bg-teal-500 hover:text-white"
+            >
+              <a class="w-full" href="#developer">Help</a>
+            </li>
+          </ul>
+        </li>
+        <li class="py-4 group hover:bg-teal-500 ease-in-out">
+          <a
+            class="group-hover:text-white group-hover:font-medium p-4"
+            href="#terms"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="px-24 bg-teal-50 min-h-screen">
+      <div
+        id="notice"
+        class="uppercase tracking-wide group hover:bg-teal-500 border-solid border-2 border-teal-500 hover:text-white transform hover:-translate-y-0.5 duration-150 ease-in-out bg-teal-50 py-2 px-4 rounded shadow-sm flex items-center justify-between"
+      >
+        <div id="content">
+          <h3 class="text-sm font-semibold opacity-70">Notice to the user.</h3>
+          <p>
+            This is all live Scrapped data from Lok Sewa Aayog's website.
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="fill-current text-teal-500 w-6 h-6 group-hover:text-white cursor-pointer"
+          viewBox="0 0 320 512"
+          onclick="hide('notice')"
+        >
+          <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+          <path
+            d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+          />
+        </svg>
+        <!-- <button
+          class="px-4 text-2xl flex items-center justify-center font-extrabold rounded-full"
+        >
+          x
+        </button> -->
+      </div>
+
+      <div
+        id="data-state"
+        class="p-10 bg-blue-500 m-2 rounded text-4xl text-white text-center duration-300 ease-in-out"
+      >
+        लोड हुँदैछ, कृपया पर्खनुहोस्...
+      </div>
+
+      <div
+        id="notices"
+        class="py-4 bg-teal-50 rounded grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4"
+      ></div>
+    </div>
+    <footer class="px-20 py-8 bg-teal-500 text-white text-center">
+      &copy; 2020 - Useful Tools. All rights reserved.
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/scripts/scripts.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&display=swap");
+      * {
+        font-family: "Mukta", sans-serif;
+      }
+    </style>
+  </body>
+</html>
